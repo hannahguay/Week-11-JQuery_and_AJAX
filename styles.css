@@ -3,6 +3,13 @@
     border-color: black;
     height: 100px;
     width: 100px;
+    text-align: center;
+    font: helvetica;
+    font-size: 30px;
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    flex-direction: column;
 }
 
 button {

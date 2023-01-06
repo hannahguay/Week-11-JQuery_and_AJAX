@@ -38,7 +38,7 @@ alternateTurn();
 
 //INSERT CHARACTER ON CLICK
 
-//this function uses XOR operator to alternate between 1 and 0 each time boxClick is called
+//this function uses a XOR operator to alternate between 1 and 0 each time boxClick is called
 //and inserts an X or O accordingly
 let turn = 0;
 
@@ -53,73 +53,88 @@ function boxClick(id) {
 //FIND A WINNER
 
 //This is a loop that determines if there are three boxes in a row with the same value and declares a winner based on the value
-//see if you can get the alert to be hidden until declaring a winner
-
 //Can't get the situation of a tie to actually run (default case, first condition)
+
+document.getElementsByClassName("alert alert-primary")[0].style.display = "none";
 
 for (let i = 0; i < grid.length; i++) {
    grid[i].addEventListener("click", function() {
       switch (true) {
       case box1.innerHTML == 'X' && box2.innerHTML == 'X' && box3.innerHTML == 'X':
         console.log("case1");
+        document.getElementsByClassName("alert alert-primary")[0].style.display = "block";
         document.getElementsByClassName("alert alert-primary")[0].innerHTML = "X is the Winner!";
         break;
       case box1.innerHTML == 'X' && box5.innerHTML == 'X' && box9.innerHTML == 'X':
         console.log("case2");
+        document.getElementsByClassName("alert alert-primary")[0].style.display = "block";
         document.getElementsByClassName("alert alert-primary")[0].innerHTML = "X is the Winner!";
         break;
       case box1.innerHTML == 'X' && box4.innerHTML == 'X' && box7.innerHTML == 'X':
         console.log("case3");
+        document.getElementsByClassName("alert alert-primary")[0].style.display = "block";
         document.getElementsByClassName("alert alert-primary")[0].innerHTML = "X is the Winner!";
         break;
       case box2.innerHTML == 'X' && box5.innerHTML == 'X' && box8.innerHTML == 'X':
         console.log("case4");
+        document.getElementsByClassName("alert alert-primary")[0].style.display = "block";
         document.getElementsByClassName("alert alert-primary")[0].innerHTML = "X is the Winner!";
         break;
       case box3.innerHTML == 'X' && box6.innerHTML == 'X' && box9.innerHTML == 'X':
         console.log("case5");
+        document.getElementsByClassName("alert alert-primary")[0].style.display = "block";
         document.getElementsByClassName("alert alert-primary")[0].innerHTML = "X is the Winner!";
         break;
       case box4.innerHTML == 'X' && box5.innerHTML == 'X' && box6.innerHTML == 'X':
         console.log("case6");
+        document.getElementsByClassName("alert alert-primary")[0].style.display = "block";
         document.getElementsByClassName("alert alert-primary")[0].innerHTML = "X is the Winner!";
         break;
       case box7.innerHTML == 'X' && box8.innerHTML == 'X' && box9.innerHTML == 'X':
         console.log("case7");
+        document.getElementsByClassName("alert alert-primary")[0].style.display = "block";
         document.getElementsByClassName("alert alert-primary")[0].innerHTML = "X is the Winner!";
         break;
       case box1.innerHTML == 'O' && box2.innerHTML == 'X' && box3.innerHTML == 'O':
         console.log("case8");
+        document.getElementsByClassName("alert alert-primary")[0].style.display = "block";
         document.getElementsByClassName("alert alert-primary")[0].innerHTML = "X is the Winner!";
         break;
       case box1.innerHTML == 'O' && box5.innerHTML == 'O' && box9.innerHTML == 'O':
         console.log("case9");
+        document.getElementsByClassName("alert alert-primary")[0].style.display = "block";
         document.getElementsByClassName("alert alert-primary")[0].innerHTML = "O is the Winner!";
         break;
       case box1.innerHTML == 'O' && box4.innerHTML == 'O' && box7.innerHTML == 'O':
         console.log("case10");
+        document.getElementsByClassName("alert alert-primary")[0].style.display = "block";
         document.getElementsByClassName("alert alert-primary")[0].innerHTML = "O is the Winner!";
         break;
       case box2.innerHTML == 'O' && box5.innerHTML == 'O' && box8.innerHTML == 'O':
         console.log("case11");
+        document.getElementsByClassName("alert alert-primary")[0].style.display = "block";
         document.getElementsByClassName("alert alert-primary")[0].innerHTML = "O is the Winner!";
         break;
       case box3.innerHTML == 'O' && box6.innerHTML == 'O' && box9.innerHTML == 'O':
         console.log("case12");
+        document.getElementsByClassName("alert alert-primary")[0].style.display = "block";
         document.getElementsByClassName("alert alert-primary")[0].innerHTML = "O is the Winner!";
         break;
       case box4.innerHTML == 'O' && box5.innerHTML == 'O' && box6.innerHTML == 'O':
         console.log("case13");
+        document.getElementsByClassName("alert alert-primary")[0].style.display = "block";
         document.getElementsByClassName("alert alert-primary")[0].innerHTML = "O is the Winner!";
         break;
       case box7.innerHTML == 'O' && box8.innerHTML == 'O' && box9.innerHTML == 'O':
         console.log("case14");
+        document.getElementsByClassName("alert alert-primary")[0].style.display = "block";
         document.getElementsByClassName("alert alert-primary")[0].innerHTML = "O is the Winner!";
         break;
       default:
         const xElements = grid.filter(box => box.innerHTML === 'X');
         if(xElements >= 3) {
             console.log("default case 3 or more X's");
+            document.getElementsByClassName("alert alert-primary")[0].style.display = "block";
             document.getElementsByClassName("alert alert-primary")[0].innerHTML = "Cat's Game!";
         } else {
           console.log("default case empty");
@@ -129,14 +144,14 @@ for (let i = 0; i < grid.length; i++) {
   })
 }
 
-
 //RESET BUTTON
 
-//Loops through the grid array and if a box contains any HTML replaces it with empty HTMl
+//Loops through the grid array and if a box contains any HTML replaces it with empty HTMl and hides the winner alert
 button.addEventListener("click", e => {
     for (let i = 0; i < grid.length; i++) {
         if (grid[i].innerHTML != '') {
             grid[i].innerHTML = '';
+            document.getElementsByClassName("alert alert-primary")[0].style.display = "none";
         }
     }
 });
