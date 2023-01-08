@@ -1,4 +1,4 @@
-const button = document.querySelector("button")
+const button = document.querySelector("button");
 const box1 = document.getElementById("box1");
 const box2 = document.getElementById("box2");
 const box3 = document.getElementById("box3");
@@ -23,7 +23,7 @@ function oTurn (){
 //this function uses user clicks on the grid to alternate between 1 and 0 and trigger xTurn or oTurn accordingly
 function alternateTurn(){
     let player = 1;
-    for (let i = 0; i < 9; i++){
+    for (let i = 0; i < 200; i++){
         if(player == 1) {
             grid[i].addEventListener('click', oTurn);
             player = 0;
